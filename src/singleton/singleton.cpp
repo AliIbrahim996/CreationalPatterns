@@ -12,11 +12,7 @@ Singleton::Singleton(const std::string& value)
     this->value_ = value;
 }
 
-Singleton::~Singleton()
-{
-}
-
-Singleton& Singleton::instance(const std::string value)
+Singleton& Singleton::instance(const std::string& value)
 {
     static Singleton instance(value);
     return instance;

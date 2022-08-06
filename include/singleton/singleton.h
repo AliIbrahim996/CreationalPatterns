@@ -1,5 +1,6 @@
 #ifndef CREATIONAL_SINGLETON_H
 #define CREATIONAL_SINGLETON_H
+#include <string>
 
 namespace DesignPatterns
 {
@@ -8,10 +9,10 @@ namespace Creational
 class Singleton
 {
 public:
-    //!@brief a static method that check and return only one instance.
+    //! A static method that check and return only one instance.
     //! @param[in] value
     //! @return a single instance of the class
-    static Singleton& instance(const std::string value);
+    static Singleton& instance(const std::string& value);
 
     //! Singleton instance should not be cloneable.
     Singleton(const Singleton&) = delete;
@@ -26,9 +27,9 @@ private:
     //!
     std::string value_;
     //! Constructor.
-    Singleton(const std::string& value);
+    explicit Singleton(const std::string& value);
     //! Destructor.
-    ~Singleton();
+    ~Singleton() = default;
 
 };
 }
